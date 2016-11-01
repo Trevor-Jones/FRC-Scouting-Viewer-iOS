@@ -146,6 +146,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
+        if isActive {
+            print(filteredTeamArray[indexPath.row])
+        } else {
+            print(teamArray[indexPath.row])
+        }
         self.onCloseMenuClick(btn)
     }
     

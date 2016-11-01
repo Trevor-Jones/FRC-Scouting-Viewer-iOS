@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
-    var sender : UIButton = UIButton()
+    lazy var sender : UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,36 +28,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func slideMenuItemSelectedAtIndex(_ index: Int32) {
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        print("View Controller is : \(topViewController) \n", terminator: "")
-        switch(index){
-        case 0:
-            print("Home\n", terminator: "")
-
-            self.openViewControllerBasedOnIdentifier("Home")
-            
-            break
-        case 1:
-            print("Play\n", terminator: "")
-            
-            self.openViewControllerBasedOnIdentifier("PlayVC")
-            
-            break
-        default:
-            print("default\n", terminator: "")
-        }
-    }
-    
-    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
-        let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
         
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        
-        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            print("Same VC")
-        } else {
-            self.navigationController!.pushViewController(destViewController, animated: true)
-        }
     }
     
     func addSlideMenuButton(){
