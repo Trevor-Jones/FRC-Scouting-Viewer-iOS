@@ -10,8 +10,15 @@ import UIKit
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
+    var sender : UIButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(showMenu))
+        edgePan.edges = .left
+        
+        view.addGestureRecognizer(edgePan)
         // Do any additional setup after loading the view.
     }
     
@@ -60,6 +67,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         btnShowMenu.addTarget(self, action: #selector(BaseViewController.onSlideMenuButtonPressed(_:)), for: UIControlEvents.touchUpInside)
         let customBarItem = UIBarButtonItem(customView: btnShowMenu)
         self.navigationItem.leftBarButtonItem = customBarItem;
+        sender = btnShowMenu
     }
 
     func defaultMenuImage() -> UIImage {
@@ -82,6 +90,32 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         UIGraphicsEndImageContext()
        
         return defaultMenuImage;
+    }
+    
+    func showMenu(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if (sender.tag == 10)
+        {
+            // The menu is already open or opening, so don't open a new one
+            return
+        }
+        
+        sender.isEnabled = false
+        sender.tag = 10
+        
+        let menuVC : MenuViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        menuVC.btnMenu = sender
+        menuVC.delegate = self
+        self.view.addSubview(menuVC.view)
+        self.addChildViewController(menuVC)
+        menuVC.view.layoutIfNeeded()
+        
+        
+        menuVC.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+        
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            menuVC.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+            self.sender.isEnabled = true
+        }, completion:nil)
     }
     
     func onSlideMenuButtonPressed(_ sender : UIButton){

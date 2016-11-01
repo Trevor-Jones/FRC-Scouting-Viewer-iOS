@@ -19,5 +19,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AKSwiftSlideMenu/BaseViewController.swift"
+            timestampString = "499713176.737061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "BaseViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScoutingDataViewer.BaseViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ScoutingDataViewer.BaseViewController"
+                  moduleName = "ScoutingDataViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Trevor/Documents/Programming/iOS/ScoutingDataViewer/AKSwiftSlideMenu/BaseViewController.swift"
+                  timestampString = "499713581.890778"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScoutingDataViewer.BaseViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ScoutingDataViewer.BaseViewController"
+                  moduleName = "ScoutingDataViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Trevor/Documents/Programming/iOS/ScoutingDataViewer/AKSwiftSlideMenu/BaseViewController.swift"
+                  timestampString = "499713581.893949"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScoutingDataViewer.BaseViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ScoutingDataViewer.BaseViewController&gt;"
+                  moduleName = "ScoutingDataViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Trevor/Documents/Programming/iOS/ScoutingDataViewer/AKSwiftSlideMenu/BaseViewController.swift"
+                  timestampString = "499713581.897571"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScoutingDataViewer.BaseViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ScoutingDataViewer.BaseViewController&gt;"
+                  moduleName = "ScoutingDataViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Trevor/Documents/Programming/iOS/ScoutingDataViewer/AKSwiftSlideMenu/BaseViewController.swift"
+                  timestampString = "499713581.900704"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "105">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
