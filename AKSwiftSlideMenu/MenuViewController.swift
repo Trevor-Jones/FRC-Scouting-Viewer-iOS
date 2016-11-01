@@ -53,6 +53,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         searchBar.delegate = self
         tblMenuOptions.delegate = self
         tblMenuOptions.dataSource = self
+        tblMenuOptions.contentOffset = CGPoint(x: 0, y: 44)
         // Do any additional setup after loading the view.
     }
     
