@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96ECA87936F09ED80CD760486DFEAA6702067516",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "96ECA87936F09ED80CD760486DFEAA6702067516" : 9223372036854775807,
+    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5CEF1EEB-22CE-4878-BB6A-BDB39F05DC65",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "96ECA87936F09ED80CD760486DFEAA6702067516" : "ScoutingDataViewer\/",
+    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : "XLPagerTabStrip\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ScoutingDataViewer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ScoutingDataViewer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/Trevor-Jones\/FRC-Scouting-Viewer-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96ECA87936F09ED80CD760486DFEAA6702067516"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xmartlabs\/XLPagerTabStrip.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F"
+    }
+  ]
+}

@@ -1,14 +1,6 @@
-//
-//  PlayVC.swift
-//  AKSwiftSlideMenu
-//
-//  Created by MAC-186 on 4/8/16.
-//  Copyright © 2016 Kode. All rights reserved.
-//
-
 import UIKit
 
-class TeamVC: BaseViewController {
+class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
     
     @IBOutlet weak var teamViewNavBar: UINavigationItem!
     var teamName:String!
@@ -28,7 +20,64 @@ class TeamVC: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let vc1 = viewControllerWithColorAndTitle(UIColor.white, title: "First View Controller")
+        let vc2 = viewControllerWithColorAndTitle(UIColor.white, title: "Second View Controller")
+        
+        
+        let slidingContainerViewController = SlidingContainerViewController (
+            parent: self,
+            contentViewControllers: [vc1, vc2],
+            titles: ["Statistics", "Matches"])
+        
+        view.addSubview(slidingContainerViewController.view)
+        
+        slidingContainerViewController.sliderView.appearance.outerPadding = 0
+        slidingContainerViewController.sliderView.appearance.innerPadding = 50
+        slidingContainerViewController.sliderView.appearance.fixedWidth = true
+        slidingContainerViewController.setCurrentViewControllerAtIndex(0)
+    }
+    
+    func viewControllerWithColorAndTitle (_ color: UIColor, title: String) -> UIViewController {
+        
+        let vc = UIViewController ()
+        vc.view.backgroundColor = color
+        
+        let label = UILabel (frame: vc.view.frame)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        label.font = UIFont (name: "HelveticaNeue-Light", size: 25)
+        label.text = title
+        
+        label.sizeToFit()
+        label.center = view.center
+        
+        vc.view.addSubview(label)
+        
+        return vc
+    }
+    
+    
+    // MARK: SlidingContainerViewControllerDelegate
+    
+    func slidingContainerViewControllerDidShowSliderView(_ slidingContainerViewController: SlidingContainerViewController) {
+        
+    }
+    
+    func slidingContainerViewControllerDidHideSliderView(_ slidingContainerViewController: SlidingContainerViewController) {
+        
+    }
+    
+    func slidingContainerViewControllerDidMoveToViewController(_ slidingContainerViewController: SlidingContainerViewController, viewController: UIViewController) {
+        
+    }
+    
+    func slidingContainerViewControllerDidMoveToViewControllerAtIndex(_ slidingContainerViewController: SlidingContainerViewController, index: Int) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
