@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69FA19EB1DD280B200A1E256 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA19EA1DD280B200A1E256 /* TeamData.swift */; };
 		69FADB3D1DC95E3100D698C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69FADB3C1DC95E3100D698C1 /* GoogleService-Info.plist */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
@@ -15,12 +16,13 @@
 		753A55E31BB0753B00254F27 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E21BB0753B00254F27 /* MenuViewController.swift */; };
 		753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E41BB0755100254F27 /* BaseViewController.swift */; };
 		B4210B35C43DE684EA676CFD /* Pods_ScoutingDataViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01CAF9EF1DDB7EB056027BE /* Pods_ScoutingDataViewer.framework */; };
-		C6EEF9F61CB7E2AD00A3DC6D /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EEF9F51CB7E2AD00A3DC6D /* PlayVC.swift */; };
+		C6EEF9F61CB7E2AD00A3DC6D /* TeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EEF9F51CB7E2AD00A3DC6D /* TeamVC.swift */; };
 		C6EEF9F81CB7E4E000A3DC6D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EEF9F71CB7E4E000A3DC6D /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18A8EA753E32ED2437698C94 /* Pods-ScoutingDataViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoutingDataViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScoutingDataViewer/Pods-ScoutingDataViewer.release.xcconfig"; sourceTree = "<group>"; };
+		69FA19EA1DD280B200A1E256 /* TeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		69FADB3C1DC95E3100D698C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* ScoutingDataViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoutingDataViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,7 +34,7 @@
 		753A55E41BB0755100254F27 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A82E2A71C91FA740732222E0 /* Pods-ScoutingDataViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoutingDataViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScoutingDataViewer/Pods-ScoutingDataViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		B01CAF9EF1DDB7EB056027BE /* Pods_ScoutingDataViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoutingDataViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6EEF9F51CB7E2AD00A3DC6D /* PlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
+		C6EEF9F51CB7E2AD00A3DC6D /* TeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamVC.swift; sourceTree = "<group>"; };
 		C6EEF9F71CB7E4E000A3DC6D /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +72,6 @@
 			children = (
 				753A55BF1BB073E900254F27 /* ScoutingDataViewer */,
 				753A55BE1BB073E900254F27 /* Products */,
-				69FADB3C1DC95E3100D698C1 /* GoogleService-Info.plist */,
 				26BC49DC1544B72465DC5F6A /* Pods */,
 				696F8A644A59A977AC3EF4FF /* Frameworks */,
 			);
@@ -90,11 +91,13 @@
 				753A55C21BB073E900254F27 /* AppDelegate.swift */,
 				C6EEF9F71CB7E4E000A3DC6D /* HomeVC.swift */,
 				753A55E41BB0755100254F27 /* BaseViewController.swift */,
+				69FA19EA1DD280B200A1E256 /* TeamData.swift */,
 				753A55E21BB0753B00254F27 /* MenuViewController.swift */,
-				C6EEF9F51CB7E2AD00A3DC6D /* PlayVC.swift */,
+				C6EEF9F51CB7E2AD00A3DC6D /* TeamVC.swift */,
 				753A55C61BB073E900254F27 /* Main.storyboard */,
 				753A55C91BB073E900254F27 /* Images.xcassets */,
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
+				69FADB3C1DC95E3100D698C1 /* GoogleService-Info.plist */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
 			);
 			name = ScoutingDataViewer;
@@ -225,7 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -236,9 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */,
-				C6EEF9F61CB7E2AD00A3DC6D /* PlayVC.swift in Sources */,
+				C6EEF9F61CB7E2AD00A3DC6D /* TeamVC.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* HomeVC.swift in Sources */,
 				753A55E31BB0753B00254F27 /* MenuViewController.swift in Sources */,
+				69FA19EB1DD280B200A1E256 /* TeamData.swift in Sources */,
 				753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +363,7 @@
 				DEVELOPMENT_TEAM = X45585L63R;
 				INFOPLIST_FILE = AKSwiftSlideMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.scoutingviewer.trevor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoutingviewer.955;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -373,7 +377,7 @@
 				DEVELOPMENT_TEAM = X45585L63R;
 				INFOPLIST_FILE = AKSwiftSlideMenu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.scoutingviewer.trevor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scoutingviewer.955;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

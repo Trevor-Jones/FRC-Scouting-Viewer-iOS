@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeVC: BaseViewController {
+    @IBOutlet weak var teamViewNavBar: UINavigationItem!
+    var teamName : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()

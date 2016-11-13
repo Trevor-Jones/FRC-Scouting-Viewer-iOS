@@ -7,4 +7,5 @@ target 'ScoutingDataViewer' do
 
   # Pods for ScoutingDataViewer
   pod ‘Firebase/Core’
+  pod ‘Firebase/Database’
 end

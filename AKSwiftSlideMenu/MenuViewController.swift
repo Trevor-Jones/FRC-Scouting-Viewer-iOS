@@ -35,6 +35,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var teamArray = [String]()
     var filteredTeamArray = [String]()
     
+    var selectedName : String = ""
+    
+    var teamIndex : Int = 0
+    
     var isActive : Bool = false
     
     /**
@@ -49,6 +53,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateArrayMenuOptions()
+        
         tblMenuOptions.tableFooterView = UIView()
         searchBar.delegate = self
         tblMenuOptions.delegate = self
@@ -64,12 +70,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateArrayMenuOptions()
     }
     
     func updateArrayMenuOptions(){
-        teamArray = ["955 CV Robotics","1983","4488","2471"]
-        tblMenuOptions.reloadData()
+        teamArray = []
+        var name : String = ""
+        
+        for i in 0..<Teams.teams.count {
+            name = "\(Teams.teams[i].number!) \(Teams.teams[i].name!)"
+            self.teamArray.append(name)
+        }
+        
+        self.tblMenuOptions.reloadData()
+        print(self.teamArray)
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!){
@@ -124,6 +137,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isActive = false
+        filteredTeamArray = teamArray
         tblMenuOptions.reloadData()
     }
     
@@ -147,11 +161,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let btn = UIButton(type: UIButtonType.custom)
         btn.tag = indexPath.row
         if isActive {
-            print(filteredTeamArray[indexPath.row])
+            selectedName = filteredTeamArray[indexPath.row]
+            
+            for i in 0..<teamArray.count {
+                if filteredTeamArray[indexPath.row] == teamArray[i] {
+                    teamIndex = i
+                }
+            }
         } else {
-            print(teamArray[indexPath.row])
+            selectedName = teamArray[indexPath.row]
+            teamIndex = indexPath.row
         }
+        self.performSegue(withIdentifier: "teamDataSegue", sender: self)
         self.onCloseMenuClick(btn)
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -164,5 +187,13 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         tblMenuOptions.reloadData()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "teamDataSegue") {
+            let svc = segue.destination as! TeamVC;
+            svc.teamIndex = teamIndex
+            
+        }
     }
 }
