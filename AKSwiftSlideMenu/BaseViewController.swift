@@ -31,6 +31,17 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
             print("Same VC")
+            let viewMenuBack : UIView = view.subviews.last!
+            
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                var frameMenu : CGRect = viewMenuBack.frame
+                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
+                viewMenuBack.frame = frameMenu
+                viewMenuBack.layoutIfNeeded()
+                viewMenuBack.backgroundColor = UIColor.clear
+            }, completion: { (finished) -> Void in
+                viewMenuBack.removeFromSuperview()
+            })
         } else {
             self.navigationController!.pushViewController(destViewController, animated: true)
         }
@@ -101,18 +112,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             self.slideMenuItemSelectedAtIndex(-1);
             
             sender.tag = 0;
-            
-            let viewMenuBack : UIView = view.subviews.last!
-            
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                var frameMenu : CGRect = viewMenuBack.frame
-                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
-                viewMenuBack.frame = frameMenu
-                viewMenuBack.layoutIfNeeded()
-                viewMenuBack.backgroundColor = UIColor.clear
-                }, completion: { (finished) -> Void in
-                    viewMenuBack.removeFromSuperview()
-            })
             
             return
         }

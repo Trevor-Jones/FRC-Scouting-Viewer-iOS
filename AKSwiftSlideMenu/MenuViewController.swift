@@ -37,8 +37,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var selectedName : String = ""
     
-    var teamIndex : Int = 0
-    
     var isActive : Bool = false
     
     /**
@@ -165,12 +163,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             for i in 0..<teamArray.count {
                 if filteredTeamArray[indexPath.row] == teamArray[i] {
-                    teamIndex = i
+                    Teams.selectedTeam = i
                 }
             }
         } else {
             selectedName = teamArray[indexPath.row]
-            teamIndex = indexPath.row
+            Teams.selectedTeam = indexPath.row
         }
         self.performSegue(withIdentifier: "teamDataSegue", sender: self)
         self.onCloseMenuClick(btn)
@@ -187,13 +185,5 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         tblMenuOptions.reloadData()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "teamDataSegue") {
-            let svc = segue.destination as! TeamVC;
-            svc.teamIndex = teamIndex
-            
-        }
     }
 }

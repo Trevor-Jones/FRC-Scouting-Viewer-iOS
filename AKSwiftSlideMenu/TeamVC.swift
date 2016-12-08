@@ -4,13 +4,13 @@ class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
     
     @IBOutlet weak var teamViewNavBar: UINavigationItem!
     var teamName:String!
-    var teamIndex:Int!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addSlideMenuButton()
-        teamName = "\(Teams.teams[teamIndex].name!)"
+        Teams.updateTeam(teamNumber: Teams.selectedTeam)
+        teamName = "\(Teams.teams[Teams.selectedTeam].name!)"
         teamViewNavBar.title = teamName
         // Do any additional setup after loading the view.
     }
@@ -23,13 +23,13 @@ class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let vc1 = viewControllerWithColorAndTitle(UIColor.white, title: "First View Controller")
-        let vc2 = viewControllerWithColorAndTitle(UIColor.white, title: "Second View Controller")
+        let statisticsVC : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "StatisticsVC")
+        let matchesVC : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MatchesVC")
         
         
         let slidingContainerViewController = SlidingContainerViewController (
             parent: self,
-            contentViewControllers: [vc1, vc2],
+            contentViewControllers: [statisticsVC, matchesVC],
             titles: ["Statistics", "Matches"])
         
         view.addSubview(slidingContainerViewController.view)

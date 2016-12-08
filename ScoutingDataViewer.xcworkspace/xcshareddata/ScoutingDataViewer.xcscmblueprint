@@ -5,17 +5,24 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "96ECA87936F09ED80CD760486DFEAA6702067516" : 9223372036854775807,
-    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : 9223372036854775807
+    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : 9223372036854775807,
+    "73FF466759DB3206DD1BBBA76B15E50BD2F0ED61" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5CEF1EEB-22CE-4878-BB6A-BDB39F05DC65",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "96ECA87936F09ED80CD760486DFEAA6702067516" : "ScoutingDataViewer\/",
-    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : "XLPagerTabStrip\/"
+    "FF277BBF96443A7AD66BBCF80D586F8E3FF7BB4F" : "XLPagerTabStrip\/",
+    "73FF466759DB3206DD1BBBA76B15E50BD2F0ED61" : "SlidingContainerViewController\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ScoutingDataViewer",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ScoutingDataViewer.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cemolcay\/SlidingContainerViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73FF466759DB3206DD1BBBA76B15E50BD2F0ED61"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/Trevor-Jones\/FRC-Scouting-Viewer-iOS.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

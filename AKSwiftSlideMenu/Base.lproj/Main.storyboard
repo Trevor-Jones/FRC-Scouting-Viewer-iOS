@@ -27,6 +27,50 @@
             </objects>
             <point key="canvasLocation" x="644" y="340"/>
         </scene>
+        <!--StatisticsVC-->
+        <scene sceneID="WaB-o1-g1n">
+            <objects>
+                <viewController storyboardIdentifier="StatisticsVC" id="asC-X2-zLB" customClass="StatisticsVC" customModule="ScoutingDataViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wW8-xI-3h3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="hDy-Qh-WYW">
+                                <rect key="frame" x="-83" y="103" width="540" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dFy-Uh-TOi">
+                                <rect key="frame" x="7" y="180" width="360" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="gamesWonLabel" destination="dFy-Uh-TOi" id="udd-36-QvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWK-9K-ImW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569.5" y="339.5"/>
+        </scene>
+        <!--MatchesVC-->
+        <scene sceneID="Kkg-wj-hmE">
+            <objects>
+                <viewController storyboardIdentifier="MatchesVC" id="hm3-Z0-ZSi" customClass="MatchesVC" customModule="ScoutingDataViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eaW-dk-WBf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OpC-Hq-haH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2021.5" y="339.5"/>
+        </scene>
         <!--Play-->
         <scene sceneID="q6l-iR-WN3">
             <objects>
@@ -162,6 +206,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WvG-AQ-ekI"/>
+        <segue reference="k58-t2-w6r"/>
     </inferredMetricsTieBreakers>
 </document>
