@@ -40,6 +40,7 @@ class TeamData {
 }
 
 class Teams {
+    static var titles : [String] = ["Auto Points", "Lines Crossed", "Auto Bunnies", "Teleop Bunnies", "Nerf Gun Hits", "Jank", "Broken", "Fast", "Auto", "Bunnies"]
     static var teams = [TeamData]()
     static var selectedTeam = 0
     static var currentSnapshot : FIRDataSnapshot?

@@ -12,6 +12,7 @@ import Charts
 class ChartTableCell: UITableViewCell {
     
     
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var barChartView: BarChartView!
     
     override func awakeFromNib() {
@@ -20,8 +21,10 @@ class ChartTableCell: UITableViewCell {
         barChartView.isUserInteractionEnabled = false
         barChartView.legend.enabled = false
         barChartView.leftAxis.drawLabelsEnabled = false
-        barChartView.rightAxis.enabled = false
-        barChartView.xAxis.enabled = false
+        barChartView.rightAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.drawLabelsEnabled = false
         
         // Initialization code
     }

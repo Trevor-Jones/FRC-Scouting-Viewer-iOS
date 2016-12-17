@@ -19,6 +19,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         chartTableView.tableFooterView = UIView()
         chartTableView.delegate = self
         chartTableView.dataSource = self
+        chartTableView.separatorStyle = .none
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,18 +59,18 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.barChartView.leftAxis.enabled = true;
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
             chartDataSet.valueFormatter = BooleanValueFormatter()
-            cell.barChartView.leftAxis.axisMaximum = 1.5;
+            cell.barChartView.leftAxis.axisMaximum = 1.2;
             cell.barChartView.leftAxis.axisMinimum = 0;
-            cell.barChartView.leftAxis.enabled = false;
+            //cell.barChartView.leftAxis.drawGridLinesEnabled = false;
         } else {
-            cell.barChartView.leftAxis.enabled = true;
+            cell.barChartView.leftAxis.drawGridLinesEnabled = true;
             cell.barChartView.leftAxis.axisMaximum = chartDataSet.yMax * 1.1
             cell.barChartView.leftAxis.axisMinimum = 0
         }
         chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
         let chartData = BarChartData(dataSet: chartDataSet)
         cell.barChartView.data = chartData
-        //cell.lblTitle.text = self.items[indexPath.row]
+        cell.titleLbl.text = Teams.titles[indexPath.row]
         
         return cell
     }
