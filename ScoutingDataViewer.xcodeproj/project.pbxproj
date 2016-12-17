@@ -11,6 +11,8 @@
 		69917E261DD8465200AD4C33 /* SlidingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69917E241DD8465200AD4C33 /* SlidingContainerViewController.swift */; };
 		69917E281DD855C600AD4C33 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69917E271DD855C600AD4C33 /* StatisticsVC.swift */; };
 		69917E2A1DD85CD500AD4C33 /* MatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69917E291DD85CD500AD4C33 /* MatchesVC.swift */; };
+		69B943AE1E04D88D0073FCC0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B943AD1E04D88D0073FCC0 /* TableViewCell.swift */; };
+		69D25DD11E04EF2700F663F7 /* BooleanValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */; };
 		69F8E2361DF4CEBA00482C19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69F8E2351DF4CEBA00482C19 /* GoogleService-Info.plist */; };
 		69FA19EB1DD280B200A1E256 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA19EA1DD280B200A1E256 /* TeamData.swift */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 		69917E241DD8465200AD4C33 /* SlidingContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlidingContainerViewController.swift; path = ../../SlidingContainerViewController/SlidingContainerViewController/SlidingContainerViewController/SlidingContainerViewController.swift; sourceTree = "<group>"; };
 		69917E271DD855C600AD4C33 /* StatisticsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
 		69917E291DD85CD500AD4C33 /* MatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesVC.swift; sourceTree = "<group>"; };
+		69B943AD1E04D88D0073FCC0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanValueFormatter.swift; sourceTree = "<group>"; };
 		69F8E2351DF4CEBA00482C19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69FA19EA1DD280B200A1E256 /* TeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* ScoutingDataViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoutingDataViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +117,9 @@
 				753A55E21BB0753B00254F27 /* MenuViewController.swift */,
 				C6EEF9F51CB7E2AD00A3DC6D /* TeamVC.swift */,
 				69917E271DD855C600AD4C33 /* StatisticsVC.swift */,
+				69B943AD1E04D88D0073FCC0 /* TableViewCell.swift */,
 				69917E291DD85CD500AD4C33 /* MatchesVC.swift */,
+				69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */,
 				753A55C61BB073E900254F27 /* Main.storyboard */,
 				753A55C91BB073E900254F27 /* Images.xcassets */,
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
@@ -264,6 +270,8 @@
 				C6EEF9F61CB7E2AD00A3DC6D /* TeamVC.swift in Sources */,
 				69917E261DD8465200AD4C33 /* SlidingContainerViewController.swift in Sources */,
 				C6EEF9F81CB7E4E000A3DC6D /* HomeVC.swift in Sources */,
+				69B943AE1E04D88D0073FCC0 /* TableViewCell.swift in Sources */,
+				69D25DD11E04EF2700F663F7 /* BooleanValueFormatter.swift in Sources */,
 				69917E281DD855C600AD4C33 /* StatisticsVC.swift in Sources */,
 				753A55E31BB0753B00254F27 /* MenuViewController.swift in Sources */,
 				69FA19EB1DD280B200A1E256 /* TeamData.swift in Sources */,

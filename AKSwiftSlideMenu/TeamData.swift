@@ -22,12 +22,16 @@ class TeamData {
     var teleopBunnies = [Int]()
     var nerfHits = [Int]()
     
+    var allIntData = [[Int]]()
+    
     // Tags
     var jank = [Bool]()
     var broken = [Bool]()
     var fast = [Bool]()
     var auto = [Bool]()
     var bunnies = [Bool]()
+    
+    var allTagData = [[Bool]]()
     
     init(name : String, number : Int) {
         self.name = name
@@ -89,5 +93,18 @@ class Teams {
             teams[teamNumber].auto.append((rest.value as? NSDictionary)?["auto"] as? Bool ?? false)
             teams[teamNumber].bunnies.append((rest.value as? NSDictionary)?["bunnies"] as? Bool ?? false)
         }
+        teams[teamNumber].allIntData = [[Int]]()
+        teams[teamNumber].allIntData.append(teams[teamNumber].autoPoints)
+        teams[teamNumber].allIntData.append(teams[teamNumber].linesCrossed)
+        teams[teamNumber].allIntData.append(teams[teamNumber].autoBunnies)
+        teams[teamNumber].allIntData.append(teams[teamNumber].teleopBunnies)
+        teams[teamNumber].allIntData.append(teams[teamNumber].nerfHits)
+        
+        teams[teamNumber].allTagData = [[Bool]]()
+        teams[teamNumber].allTagData.append(teams[teamNumber].jank)
+        teams[teamNumber].allTagData.append(teams[teamNumber].broken)
+        teams[teamNumber].allTagData.append(teams[teamNumber].fast)
+        teams[teamNumber].allTagData.append(teams[teamNumber].auto)
+        teams[teamNumber].allTagData.append(teams[teamNumber].bunnies)
     }
 }
