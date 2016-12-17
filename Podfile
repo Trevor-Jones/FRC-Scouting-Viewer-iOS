@@ -6,6 +6,7 @@ target 'ScoutingDataViewer' do
   use_frameworks!
 
   # Pods for ScoutingDataViewer
-  pod ‘Firebase/Core’
-  pod ‘Firebase/Database’
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Charts'
 end

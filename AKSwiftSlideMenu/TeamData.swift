@@ -62,7 +62,6 @@ class Teams {
     }
     
     static func updateTeam(teamNumber : Int) {
-        print("oops")
         teams[teamNumber].autoPoints = [Int]();
         teams[teamNumber].linesCrossed = [Int]();
         teams[teamNumber].autoBunnies = [Int]();
@@ -78,7 +77,6 @@ class Teams {
         let childPath : String = "\(String(teamNumber))/matches"
         let enumerator = currentSnapshot?.childSnapshot(forPath: childPath).children
         while let rest = enumerator?.nextObject() as? FIRDataSnapshot {
-            print(rest.key)
             teams[teamNumber].autoPoints.append((rest.value as? NSDictionary)?["autoPoints"] as? Int ?? 0)
             teams[teamNumber].linesCrossed.append((rest.value as? NSDictionary)?["linesCrossed"] as? Int ?? 0)
             teams[teamNumber].autoBunnies.append((rest.value as? NSDictionary)?["autoBunnies"] as? Int ?? 0)

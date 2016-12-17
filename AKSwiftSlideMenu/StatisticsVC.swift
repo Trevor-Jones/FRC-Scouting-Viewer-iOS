@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Charts
 
 class StatisticsVC: UIViewController {
     

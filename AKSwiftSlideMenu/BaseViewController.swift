@@ -20,7 +20,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func slideMenuItemSelectedAtIndex(_ index: Int32) {
-        print(index)
+        print("Index of item selected: \(index)")
         self.openViewControllerBasedOnIdentifier("TeamVC")
     }
     
@@ -30,7 +30,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         let topViewController : UIViewController = self.navigationController!.topViewController!
         
         if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            print("Same VC")
             let viewMenuBack : UIView = view.subviews.last!
             
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
