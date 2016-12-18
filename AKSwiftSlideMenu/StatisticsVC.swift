@@ -62,6 +62,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let chartData = BarChartData(dataSet: chartDataSet)
         cell.barChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
+        cell.addPercentageToLbl(pct: Teams.getPercentageTrue(data: Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count]))
         
         return cell
     }
@@ -86,6 +87,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let chartData = LineChartData(dataSet: chartDataSet)
         cell.lineChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
+        cell.addAverageToLbl(avg: Teams.getAverageValue(data: Teams.teams[Teams.selectedTeam].allIntData[indexPath.row]))
         
         return cell
     }

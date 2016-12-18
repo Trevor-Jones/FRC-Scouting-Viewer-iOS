@@ -108,4 +108,22 @@ class Teams {
         teams[teamNumber].allTagData.append(teams[teamNumber].auto)
         teams[teamNumber].allTagData.append(teams[teamNumber].bunnies)
     }
+    
+    static func getAverageValue(data : [Int]) -> Double {
+        var total : Double = 0
+        for i in 0..<data.count {
+            total += Double(data[i])
+        }
+        return (total/Double(data.count))
+    }
+    
+    static func getPercentageTrue(data : [Bool]) -> Double {
+        var totalTrue : Double = 0
+        for i in 0..<data.count {
+            if data[i] {
+                totalTrue += 1
+            }
+        }
+        return (totalTrue/Double(data.count))
+    }
 }

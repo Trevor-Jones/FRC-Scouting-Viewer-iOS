@@ -14,6 +14,10 @@ class BarChartTableCell: UITableViewCell {
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var titleLbl: UILabel!
     
+    func addPercentageToLbl(pct : Double) {
+        titleLbl.text = (titleLbl.text ?? "") + " | Percent True: \(String(format: "%.2f", pct*100))%"
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         barChartView.chartDescription?.enabled =  false
@@ -41,6 +45,10 @@ class LineChartTableCell: UITableViewCell {
     
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var titleLbl: UILabel!
+    
+    func addAverageToLbl(avg : Double) {
+        titleLbl.text = (titleLbl.text ?? "") + " | Average: \(String(format: "%.2f", avg))"
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
