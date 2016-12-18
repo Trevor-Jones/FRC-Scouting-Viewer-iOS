@@ -9,7 +9,6 @@
 import UIKit
 
 protocol SlideMenuDelegate {
-    func slideMenuItemSelectedAtIndex(_ index : Int32)
     func onSlideMenuButtonPressed(_ sender : UIButton)
 }
 

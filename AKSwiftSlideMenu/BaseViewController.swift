@@ -21,14 +21,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func slideMenuItemSelectedAtIndex(_ index: Int32) {
-        if(index == -1) {
-            self.closeMenu()
-        } else {
-            self.openViewControllerBasedOnIdentifier("TeamVC")
-        }
-    }
-    
     func closeMenu() {
         let viewMenuBack : UIView = view.subviews.last!
         
@@ -46,7 +38,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
         print(strIdentifier)
         let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
-        
         self.navigationController!.pushViewController(destViewController, animated: true)
     }
     
@@ -114,10 +105,12 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             // To Hide Menu If it already there
             lastViewIdentifier = self.restorationIdentifier ?? "Home"
             print(sender.tag)
+            
+            // Sender tag 0 means we just want to close menu, anything else means we want to change views
             if(sender.tag == 0) {
-                self.slideMenuItemSelectedAtIndex(-1)
+                self.closeMenu()
             } else {
-                self.slideMenuItemSelectedAtIndex(0)
+                self.openViewControllerBasedOnIdentifier("TeamVC")
             }
             
             menuShowing = false
