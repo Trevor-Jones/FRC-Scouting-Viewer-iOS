@@ -57,13 +57,16 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func setUpBarCell(cell : BarChartTableCell, indexPath : IndexPath) -> BarChartTableCell {
         cell.selectionStyle = .none
         var dataEntries: [BarChartDataEntry] = []
+        var colors: [NSUIColor] = []
         
         for i in 0..<Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count].count {
             var dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
             if(Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count][i]) {
                 dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
+                colors.append(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
             } else {
                 dataEntry = BarChartDataEntry(x: Double(i), y: Double(0.2))
+                colors.append(NSUIColor(red: 1, green: 0, blue: 0, alpha: 1))
             }
             dataEntries.append(dataEntry)
         }
@@ -74,7 +77,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.barChartView.leftAxis.axisMaximum = 1.2;
         cell.barChartView.leftAxis.axisMinimum = 0;
 
-        chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
+        chartDataSet.setColors(colors, alpha: 1)
         let chartData = BarChartData(dataSet: chartDataSet)
         cell.barChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
@@ -99,6 +102,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
         chartDataSet.drawFilledEnabled = true
         chartDataSet.fillColor = NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0)
+        chartDataSet.setCircleColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
         
         let chartData = LineChartData(dataSet: chartDataSet)
         cell.lineChartView.data = chartData
