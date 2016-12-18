@@ -16,6 +16,15 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            chartTableView.refreshControl = refreshControl
+        } else {
+            chartTableView.backgroundView = refreshControl
+        }
+        
         chartTableView.tableFooterView = UIView()
         chartTableView.delegate = self
         chartTableView.dataSource = self
@@ -27,7 +36,15 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
+    func refresh(_ refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        Teams.updateTeam(teamNumber: Teams.selectedTeam)
+        chartTableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("Lets display this now")
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
             let cell : BarChartTableCell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! BarChartTableCell
             return setUpBarCell(cell: cell, indexPath: indexPath)

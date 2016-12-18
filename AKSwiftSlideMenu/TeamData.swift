@@ -47,6 +47,7 @@ class Teams {
     
     
     static func loadData() {
+        FIRDatabase.database().persistenceEnabled = true
         let ref : FIRDatabaseReference = FIRDatabase.database().reference()
         
         ref.child("team").observeSingleEvent(of: .value, with: { (snapshot) in
