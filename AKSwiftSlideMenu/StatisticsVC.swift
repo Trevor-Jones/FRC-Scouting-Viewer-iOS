@@ -28,50 +28,63 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var booleanChart = false
+        var cell : UITableViewCell
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
-            booleanChart = true
+            cell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! BarChartTableCell
+            return setUpBarCell(cell: cell as! BarChartTableCell, indexPath: indexPath)
+        } else {
+            cell = chartTableView.dequeueReusableCell(withIdentifier: "lineGraphCell")! as! LineChartTableCell
+            return setUpLineCell(cell: cell as! LineChartTableCell, indexPath: indexPath)
+        }
+    }
+    
+    func setUpBarCell(cell : BarChartTableCell, indexPath : IndexPath) -> BarChartTableCell {
+        cell.selectionStyle = .none
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count].count {
+            var dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
+            if(Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count][i]) {
+                dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
+            } else {
+                dataEntry = BarChartDataEntry(x: Double(i), y: Double(0.2))
+            }
+            dataEntries.append(dataEntry)
         }
         
-        let cell : ChartTableCell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! ChartTableCell
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
+        cell.barChartView.leftAxis.enabled = true;
+        chartDataSet.valueFormatter = BooleanValueFormatter()
+        cell.barChartView.leftAxis.axisMaximum = 1.2;
+        cell.barChartView.leftAxis.axisMinimum = 0;
+
+        chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
+        let chartData = BarChartData(dataSet: chartDataSet)
+        cell.barChartView.data = chartData
+        cell.titleLbl.text = Teams.titles[indexPath.row]
         
+        return cell
+    }
+    
+    func setUpLineCell(cell : LineChartTableCell, indexPath : IndexPath) -> LineChartTableCell {
         cell.selectionStyle = .none
-        
         var dataEntries: [BarChartDataEntry] = []
-        if(!booleanChart) {
-            for i in 0..<Teams.teams[Teams.selectedTeam].allIntData[indexPath.row].count {
-                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(Teams.teams[Teams.selectedTeam].allIntData[indexPath.row][i]))
-                dataEntries.append(dataEntry)
-            }
-        } else {
-            for i in 0..<Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count].count {
-                var dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
-                if(Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count][i]) {
-                    dataEntry = BarChartDataEntry(x: Double(i), y: Double(1))
-                } else {
-                    dataEntry = BarChartDataEntry(x: Double(i), y: Double(0.2))
-                }
-                dataEntries.append(dataEntry)
-            }
+        
+        for i in 0..<Teams.teams[Teams.selectedTeam].allIntData[indexPath.row].count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(Teams.teams[Teams.selectedTeam].allIntData[indexPath.row][i]))
+            dataEntries.append(dataEntry)
         }
         
         let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
-        cell.barChartView.leftAxis.enabled = true;
-        if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
-            chartDataSet.valueFormatter = BooleanValueFormatter()
-            cell.barChartView.leftAxis.axisMaximum = 1.2;
-            cell.barChartView.leftAxis.axisMinimum = 0;
-            //cell.barChartView.leftAxis.drawGridLinesEnabled = false;
-        } else {
-            cell.barChartView.leftAxis.drawGridLinesEnabled = true;
-            cell.barChartView.leftAxis.axisMaximum = chartDataSet.yMax * 1.1
-            cell.barChartView.leftAxis.axisMinimum = 0
-        }
+        cell.lineChartView.leftAxis.enabled = true;
+        cell.lineChartView.leftAxis.drawGridLinesEnabled = true;
+        cell.lineChartView.leftAxis.axisMaximum = chartDataSet.yMax * 1.15
+        cell.lineChartView.leftAxis.axisMinimum = 0
         chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
         chartDataSet.drawFilledEnabled = true
         chartDataSet.fillColor = NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0)
         let chartData = LineChartData(dataSet: chartDataSet)
-        cell.barChartView.data = chartData
+        cell.lineChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
         
         return cell

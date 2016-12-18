@@ -9,11 +9,10 @@
 import UIKit
 import Charts
 
-class ChartTableCell: UITableViewCell {
+class BarChartTableCell: UITableViewCell {
     
-    
+    @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var barChartView: LineChartView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +24,34 @@ class ChartTableCell: UITableViewCell {
         barChartView.rightAxis.drawLabelsEnabled = false
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.xAxis.drawLabelsEnabled = false
+        
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}
+
+class LineChartTableCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var titleLbl: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        lineChartView.chartDescription?.enabled =  false
+        lineChartView.isUserInteractionEnabled = false
+        lineChartView.legend.enabled = false
+        lineChartView.leftAxis.drawLabelsEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+        lineChartView.rightAxis.drawLabelsEnabled = false
+        lineChartView.xAxis.drawGridLinesEnabled = false
+        lineChartView.xAxis.drawLabelsEnabled = false
         
         // Initialization code
     }

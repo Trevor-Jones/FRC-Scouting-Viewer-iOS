@@ -40,14 +40,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="barGraphCell" rowHeight="250" id="LsE-fb-nxi" customClass="ChartTableCell" customModule="ScoutingDataViewer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="barGraphCell" rowHeight="250" id="LsE-fb-nxi" customClass="BarChartTableCell" customModule="ScoutingDataViewer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LsE-fb-nxi" id="qLx-Pb-JFT">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" id="ndC-lY-5WI" customClass="LineChartView" customModule="Charts">
+                                                <view contentMode="scaleToFill" misplaced="YES" id="ndC-lY-5WI" customClass="BarChartView" customModule="Charts">
                                                     <rect key="frame" x="5" y="25" width="365" height="230"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,8 +62,34 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="barChartView" destination="ndC-lY-5WI" id="xiK-8r-vJk"/>
-                                            <outlet property="titleLbl" destination="3HN-25-lpg" id="hts-aB-utr"/>
+                                            <outlet property="barChartView" destination="ndC-lY-5WI" id="YHO-dX-9No"/>
+                                            <outlet property="titleLbl" destination="3HN-25-lpg" id="yIm-zr-DhT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lineGraphCell" rowHeight="250" id="f6k-yH-eZt" customClass="LineChartTableCell" customModule="ScoutingDataViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="278" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f6k-yH-eZt" id="pKV-0c-uUM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="NJA-r1-xpZ" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="5" y="25" width="365" height="230"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8H2-A7-FnT">
+                                                    <rect key="frame" x="15" y="-17" width="365" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lineChartView" destination="NJA-r1-xpZ" id="vxm-2f-aab"/>
+                                            <outlet property="titleLbl" destination="8H2-A7-FnT" id="K2B-cn-JKU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -173,7 +199,7 @@
                                         <rect key="frame" x="0.0" y="66" width="316" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmA-Ah-Pww" id="PkJ-pF-O9W">
-                                            <rect key="frame" x="0.0" y="0.0" width="316" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="316" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q60-3k-XSH">
