@@ -13,7 +13,7 @@ class ChartTableCell: UITableViewCell {
     
     
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet weak var barChartView: LineChartView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

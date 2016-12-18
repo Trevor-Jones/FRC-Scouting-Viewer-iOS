@@ -55,7 +55,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "")
+        let chartDataSet = LineChartDataSet(values: dataEntries, label: "")
         cell.barChartView.leftAxis.enabled = true;
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
             chartDataSet.valueFormatter = BooleanValueFormatter()
@@ -68,7 +68,9 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             cell.barChartView.leftAxis.axisMinimum = 0
         }
         chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
-        let chartData = BarChartData(dataSet: chartDataSet)
+        chartDataSet.drawFilledEnabled = true
+        chartDataSet.fillColor = NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0)
+        let chartData = LineChartData(dataSet: chartDataSet)
         cell.barChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
         

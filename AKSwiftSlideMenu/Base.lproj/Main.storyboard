@@ -47,8 +47,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" misplaced="YES" id="ndC-lY-5WI" customClass="BarChartView" customModule="Charts">
-                                                    <rect key="frame" x="0.0" y="25" width="375" height="230"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" id="ndC-lY-5WI" customClass="LineChartView" customModule="Charts">
+                                                    <rect key="frame" x="5" y="25" width="365" height="230"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
