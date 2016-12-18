@@ -28,13 +28,12 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
-            cell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! BarChartTableCell
-            return setUpBarCell(cell: cell as! BarChartTableCell, indexPath: indexPath)
+            let cell : BarChartTableCell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! BarChartTableCell
+            return setUpBarCell(cell: cell, indexPath: indexPath)
         } else {
-            cell = chartTableView.dequeueReusableCell(withIdentifier: "lineGraphCell")! as! LineChartTableCell
-            return setUpLineCell(cell: cell as! LineChartTableCell, indexPath: indexPath)
+            let cell : LineChartTableCell = chartTableView.dequeueReusableCell(withIdentifier: "lineGraphCell")! as! LineChartTableCell
+            return setUpLineCell(cell: cell, indexPath: indexPath)
         }
     }
     
@@ -63,7 +62,6 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.barChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
         cell.addPercentageToLbl(pct: Teams.getPercentageTrue(data: Teams.teams[Teams.selectedTeam].allTagData[indexPath.row - Teams.teams[Teams.selectedTeam].allIntData.count]))
-        
         return cell
     }
     
@@ -84,11 +82,11 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         chartDataSet.setColor(NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0))
         chartDataSet.drawFilledEnabled = true
         chartDataSet.fillColor = NSUIColor(red:0.00, green:0.58, blue:1.00, alpha:1.0)
+        
         let chartData = LineChartData(dataSet: chartDataSet)
         cell.lineChartView.data = chartData
         cell.titleLbl.text = Teams.titles[indexPath.row]
         cell.addAverageToLbl(avg: Teams.getAverageValue(data: Teams.teams[Teams.selectedTeam].allIntData[indexPath.row]))
-        
         return cell
     }
     

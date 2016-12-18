@@ -12,6 +12,7 @@ class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
         Teams.updateTeam(teamNumber: Teams.selectedTeam)
         teamName = "\(Teams.teams[Teams.selectedTeam].name!)"
         teamViewNavBar.title = teamName
+        print(Teams.teams[Teams.selectedTeam].linesCrossed.count)
         // Do any additional setup after loading the view.
     }
 
@@ -22,8 +23,15 @@ class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        var statisticsVC : UIViewController
         
-        let statisticsVC : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "StatisticsVC")
+        // Jank way to check if data is present
+        // If there is no data for the number of lines crossed then use a different vc
+        if Teams.teams[Teams.selectedTeam].linesCrossed.count == 0 {
+            statisticsVC = self.storyboard!.instantiateViewController(withIdentifier: "NoDataVC")
+        } else {
+            statisticsVC = self.storyboard!.instantiateViewController(withIdentifier: "StatisticsVC")
+        }
         let matchesVC : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "MatchesVC")
         
         
