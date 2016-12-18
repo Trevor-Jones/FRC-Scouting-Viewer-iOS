@@ -3,6 +3,8 @@ import UIKit
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
     lazy var sender : UIButton = UIButton()
+    var lastViewIdentifier : String = "Home"
+    var menuShowing : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,30 +22,32 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func slideMenuItemSelectedAtIndex(_ index: Int32) {
-        print("Index of item selected: \(index)")
-        self.openViewControllerBasedOnIdentifier("TeamVC")
+        if(index == -1) {
+            self.closeMenu()
+        } else {
+            self.openViewControllerBasedOnIdentifier("TeamVC")
+        }
+    }
+    
+    func closeMenu() {
+        let viewMenuBack : UIView = view.subviews.last!
+        
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            var frameMenu : CGRect = viewMenuBack.frame
+            frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
+            viewMenuBack.frame = frameMenu
+            viewMenuBack.layoutIfNeeded()
+            viewMenuBack.backgroundColor = UIColor.clear
+        }, completion: { (finished) -> Void in
+            viewMenuBack.removeFromSuperview()
+        })
     }
     
     func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
+        print(strIdentifier)
         let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
         
-        let topViewController : UIViewController = self.navigationController!.topViewController!
-        
-        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
-            let viewMenuBack : UIView = view.subviews.last!
-            
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                var frameMenu : CGRect = viewMenuBack.frame
-                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
-                viewMenuBack.frame = frameMenu
-                viewMenuBack.layoutIfNeeded()
-                viewMenuBack.backgroundColor = UIColor.clear
-            }, completion: { (finished) -> Void in
-                viewMenuBack.removeFromSuperview()
-            })
-        } else {
-            self.navigationController!.pushViewController(destViewController, animated: true)
-        }
+        self.navigationController!.pushViewController(destViewController, animated: true)
     }
     
     func addSlideMenuButton(){
@@ -79,14 +83,14 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func showMenu(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if (sender.tag == 10)
+        if (menuShowing)
         {
             // The menu is already open or opening, so don't open a new one
             return
         }
         
         sender.isEnabled = false
-        sender.tag = 10
+        menuShowing = true
         
         let menuVC : MenuViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         menuVC.btnMenu = sender
@@ -105,18 +109,25 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func onSlideMenuButtonPressed(_ sender : UIButton){
-        if (sender.tag == 10)
+        if (menuShowing)
         {
             // To Hide Menu If it already there
-            self.slideMenuItemSelectedAtIndex(-1);
+            lastViewIdentifier = self.restorationIdentifier ?? "Home"
+            print(sender.tag)
+            if(sender.tag == 0) {
+                self.slideMenuItemSelectedAtIndex(-1)
+            } else {
+                self.slideMenuItemSelectedAtIndex(0)
+            }
             
-            sender.tag = 0;
+            menuShowing = false
             
             return
         }
         
         sender.isEnabled = false
-        sender.tag = 10
+        sender.tag = 0
+        menuShowing = true
         
         let menuVC : MenuViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         menuVC.btnMenu = sender

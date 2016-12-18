@@ -10,6 +10,7 @@ import UIKit
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
+    func onSlideMenuButtonPressed(_ sender : UIButton)
 }
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
@@ -84,8 +85,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func onCloseMenuClick(_ button:UIButton!){
-        btnMenu.tag = 0
-        delegate?.slideMenuItemSelectedAtIndex(-1)
+        button.tag = 0
+        delegate?.onSlideMenuButtonPressed(button)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,7 +142,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let btn = UIButton(type: UIButtonType.custom)
-        btn.tag = indexPath.row
+        btn.tag = 10
         if isActive {
             selectedName = filteredTeamArray[indexPath.row]
             
@@ -154,8 +155,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             selectedName = teamArray[indexPath.row]
             Teams.selectedTeam = indexPath.row
         }
-        self.performSegue(withIdentifier: "teamDataSegue", sender: self)
-        self.onCloseMenuClick(btn)
+        delegate?.onSlideMenuButtonPressed(btn)
         
     }
     
