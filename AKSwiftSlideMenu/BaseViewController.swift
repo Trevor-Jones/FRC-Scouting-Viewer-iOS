@@ -36,7 +36,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     }
     
     func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
-        print(strIdentifier)
         let destViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: strIdentifier)
         self.navigationController!.pushViewController(destViewController, animated: true)
     }
@@ -104,7 +103,6 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         {
             // To Hide Menu If it already there
             lastViewIdentifier = self.restorationIdentifier ?? "Home"
-            print(sender.tag)
             
             // Sender tag 0 means we just want to close menu, anything else means we want to change views
             if(sender.tag == 0) {

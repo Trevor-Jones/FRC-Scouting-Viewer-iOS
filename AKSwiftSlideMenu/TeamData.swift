@@ -13,7 +13,7 @@ import FirebaseDatabase
 class TeamData {
     // Basic Team Data
     var name : String?
-    var number : Int?
+    var number : String?
     
     // Data per match
     var autoPoints = [Int]()
@@ -33,7 +33,7 @@ class TeamData {
     
     var allTagData = [[Bool]]()
     
-    init(name : String, number : Int) {
+    init(name : String, number : String) {
         self.name = name
         self.number = number
     }
@@ -52,11 +52,10 @@ class Teams {
         
         ref.child("team").observeSingleEvent(of: .value, with: { (snapshot) in
             let enumerator = snapshot.children
-            print(snapshot.childSnapshot(forPath: "955/name").value!)
             while let rest = enumerator.nextObject() as? FIRDataSnapshot {
                 let teamName = (rest.value as? NSDictionary)?["name"] as? String ?? ""
                 let teamNumber = rest.key
-                let team = TeamData(name: teamName, number: Int(teamNumber)!)
+                let team = TeamData(name: teamName, number: String(teamNumber)!)
                 self.teams.append(team)
             }
         })
@@ -80,7 +79,7 @@ class Teams {
         teams[teamNumber].auto = [Bool]();
         teams[teamNumber].bunnies = [Bool]();
         
-        let childPath : String = "\(String(teamNumber))/matches"
+        let childPath : String =  "\(teams[teamNumber].number ?? "0")/matches"
         let enumerator = currentSnapshot?.childSnapshot(forPath: childPath).children
         while let rest = enumerator?.nextObject() as? FIRDataSnapshot {
             teams[teamNumber].autoPoints.append((rest.value as? NSDictionary)?["autoPoints"] as? Int ?? 0)

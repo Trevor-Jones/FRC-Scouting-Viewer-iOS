@@ -24,6 +24,7 @@ class TeamVC: BaseViewController, SlidingContainerViewControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         var statisticsVC : UIViewController
+        Teams.updateTeam(teamNumber: Teams.selectedTeam)
         
         // Jank way to check if data is present
         // If there is no data for the number of lines crossed then use a different vc

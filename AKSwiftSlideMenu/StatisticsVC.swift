@@ -44,7 +44,6 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Lets display this now")
         if(indexPath.row >= Teams.teams[Teams.selectedTeam].allIntData.count) {
             let cell : BarChartTableCell = chartTableView.dequeueReusableCell(withIdentifier: "barGraphCell")! as! BarChartTableCell
             return setUpBarCell(cell: cell, indexPath: indexPath)
@@ -112,7 +111,7 @@ class StatisticsVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You selected cell #\(indexPath.row)!")
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
