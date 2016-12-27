@@ -15,9 +15,9 @@
 		69D25DD11E04EF2700F663F7 /* BooleanValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */; };
 		69F8E2361DF4CEBA00482C19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69F8E2351DF4CEBA00482C19 /* GoogleService-Info.plist */; };
 		69FA19EB1DD280B200A1E256 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA19EA1DD280B200A1E256 /* TeamData.swift */; };
+		69FD712D1E12F7A700180171 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69FD712C1E12F7A700180171 /* Images.xcassets */; };
 		753A55C31BB073E900254F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55C21BB073E900254F27 /* AppDelegate.swift */; };
 		753A55C81BB073E900254F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C61BB073E900254F27 /* Main.storyboard */; };
-		753A55CA1BB073E900254F27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753A55C91BB073E900254F27 /* Images.xcassets */; };
 		753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753A55CB1BB073E900254F27 /* LaunchScreen.xib */; };
 		753A55E31BB0753B00254F27 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E21BB0753B00254F27 /* MenuViewController.swift */; };
 		753A55E51BB0755100254F27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753A55E41BB0755100254F27 /* BaseViewController.swift */; };
@@ -36,11 +36,11 @@
 		69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanValueFormatter.swift; sourceTree = "<group>"; };
 		69F8E2351DF4CEBA00482C19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		69FA19EA1DD280B200A1E256 /* TeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
+		69FD712C1E12F7A700180171 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		753A55BD1BB073E900254F27 /* ScoutingDataViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoutingDataViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A55C11BB073E900254F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753A55C21BB073E900254F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		753A55C71BB073E900254F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		753A55C91BB073E900254F27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		753A55CC1BB073E900254F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		753A55E21BB0753B00254F27 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		753A55E41BB0755100254F27 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -121,10 +121,10 @@
 				69917E291DD85CD500AD4C33 /* MatchesVC.swift */,
 				69D25DD01E04EF2700F663F7 /* BooleanValueFormatter.swift */,
 				753A55C61BB073E900254F27 /* Main.storyboard */,
-				753A55C91BB073E900254F27 /* Images.xcassets */,
 				753A55CB1BB073E900254F27 /* LaunchScreen.xib */,
 				69F8E2351DF4CEBA00482C19 /* GoogleService-Info.plist */,
 				753A55C01BB073E900254F27 /* Supporting Files */,
+				69FD712C1E12F7A700180171 /* Images.xcassets */,
 			);
 			name = ScoutingDataViewer;
 			path = AKSwiftSlideMenu;
@@ -203,9 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F8E2361DF4CEBA00482C19 /* GoogleService-Info.plist in Resources */,
+				69FD712D1E12F7A700180171 /* Images.xcassets in Resources */,
 				753A55C81BB073E900254F27 /* Main.storyboard in Resources */,
 				753A55CD1BB073E900254F27 /* LaunchScreen.xib in Resources */,
-				753A55CA1BB073E900254F27 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
